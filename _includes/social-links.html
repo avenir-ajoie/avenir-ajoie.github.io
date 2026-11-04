@@ -1,0 +1,10 @@
+<div class="social"{% if include.on_light %} style="color:#181818"{% endif %}>
+  {% for network in site.data.social %}
+  {% if network.url and network.url != "" %}
+  <a class="social-link"{% if include.on_light %} style="border:1px solid #d3d3ce"{% endif %} href="{{ network.url }}" target="_blank" rel="noopener noreferrer" title="Ouvrir notre page {{ network.name }}">
+  {% else %}
+  <a class="social-link"{% if include.on_light %} style="border:1px solid #d3d3ce"{% endif %} href="{{ '/contact/#reseaux' | relative_url }}">
+  {% endif %}
+    <img src="{{ '/assets/images/' | append: network.icon | relative_url }}"{% if include.on_light %} style="filter:none"{% endif %} alt="">{{ network.name }}</a>
+  {% endfor %}
+</div>

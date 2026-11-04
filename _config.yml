@@ -1,0 +1,26 @@
+title: Avenir Ajoie
+description: Association citoyenne et bénévole pour le paysage, la biodiversité et le cadre de vie en Ajoie.
+lang: fr
+theme: null
+permalink: pretty
+baseurl: ""
+
+email: info@avenir-ajoie.ch
+
+collections:
+  projets:
+    output: true
+    permalink: /projets/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: projets
+    values:
+      layout: project
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

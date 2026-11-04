@@ -1,0 +1,19 @@
+<header class="site-header">
+  <div class="head-inner">
+    <a href="{{ '/' | relative_url }}" class="brand" aria-label="{{ site.title }} : accueil"><img src="{{ '/assets/images/logo-avenir-ajoie.png' | relative_url }}" alt="{{ site.title }}"></a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      {% for item in site.data.navigation.main %}
+      <a href="{{ item.url | relative_url }}"{% unless item.url contains '#' %}{% if page.url contains item.url %} aria-current="page"{% endif %}{% endunless %}>{{ item.title }}</a>
+      {% endfor %}
+      <a class="join-btn" href="{{ site.data.navigation.join.url | relative_url }}">{{ site.data.navigation.join.title }} <span aria-hidden="true">→</span></a>
+    </nav>
+    <button class="menu-button" type="button" aria-label="Ouvrir le menu" aria-controls="nav-mobile" aria-expanded="false">☰</button>
+  </div>
+  <nav class="mobile-nav" id="nav-mobile" aria-label="Navigation mobile">
+    <a href="{{ '/' | relative_url }}">Accueil</a>
+    {% for item in site.data.navigation.main %}
+    <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    {% endfor %}
+    <a href="{{ site.data.navigation.join.url | relative_url }}">{{ site.data.navigation.join.title }} →</a>
+  </nav>
+</header>

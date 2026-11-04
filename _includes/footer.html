@@ -1,0 +1,27 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div>
+        <a href="{{ '/' | relative_url }}" aria-label="Retour à l’accueil"><div class="footer-brand">AVENIR<br>AJOIE<span style="color:var(--lime)">.</span></div></a>
+        <p>Une association citoyenne pour préserver le paysage, la biodiversité et le cadre de vie en Ajoie.</p>
+      </div>
+      <div>
+        <h3>Navigation</h3>
+        <ul>
+          {% for item in site.data.navigation.footer %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h3>Restons en contact</h3>
+        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        {% include social-links.html %}
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© {{ site.time | date: '%Y' }} Association {{ site.title }}</span>
+      {% if site.mockup_notice %}<span>{{ site.mockup_notice }}</span>{% endif %}
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{% include banner.html %}
+{% capture copy %}
+  <h2 class="section-title">{{ page.section_title }}</h2>
+  {{ content }}
+  {% if page.cta %}<a class="button-primary" href="{{ page.cta.url | relative_url }}">{{ page.cta.label }} <span aria-hidden="true">→</span></a>{% endif %}
+  {% if page.notice %}<div class="notice">{{ page.notice }}</div>{% endif %}
+{% endcapture %}
+<section class="content-section">
+  {% if page.resources %}
+  <div class="wrap two-cols">
+    <div class="content-copy">{{ copy }}</div>
+    <div class="link-card">
+      {% for resource in page.resources %}
+      {% unless forloop.first %}<hr class="sep">{% endunless %}
+      <h3>{{ resource.title }}</h3>
+      <p>{{ resource.text }}</p>
+      <a class="button-{{ resource.style | default: 'outline' }}" target="_blank" rel="noopener noreferrer" href="{{ resource.url }}">{{ resource.label }} <span aria-hidden="true">↗</span></a>
+      {% endfor %}
+    </div>
+  </div>
+  {% else %}
+  <div class="wrap content-copy">{{ copy }}</div>
+  {% endif %}
+</section>

@@ -1,0 +1,10 @@
+<section class="page-banner">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ '/' | relative_url }}">Accueil</a> / {% if page.collection == 'projets' %}<a href="{{ '/projets/' | relative_url }}">Projets</a> / {% endif %}{{ page.crumb | default: page.title }}</div>
+    <div class="eyebrow">{{ page.eyebrow }}</div>
+    <h1>{{ page.heading }}</h1>
+    <span class="accent-line"></span>
+    <p>{{ page.lead }}</p>
+    {% if page.banner_alt %}<img class="banner-image" src="{{ page.image | relative_url }}" alt="{{ page.banner_alt }}">{% endif %}
+  </div>
+</section>

@@ -1,0 +1,26 @@
+# Desktop and mobile menu.
+main:
+  - title: Notre vision
+    url: /association/#engagements
+  - title: Projets
+    url: /projets/
+  - title: Association
+    url: /association/
+  - title: Contact
+    url: /contact/
+
+# Highlighted button at the end of the menu.
+join:
+  title: Nous rejoindre
+  url: /contact/#adhesion
+
+# "Navigation" column in the footer.
+footer:
+  - title: Accueil
+    url: /
+  - title: Qui sommes-nous ?
+    url: /association/
+  - title: Nos projets
+    url: /projets/
+  - title: Contact
+    url: /contact/

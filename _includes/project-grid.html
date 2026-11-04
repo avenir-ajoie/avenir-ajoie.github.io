@@ -1,0 +1,15 @@
+<div class="project-grid">
+  {% assign projects = site.projets | sort: 'order' %}
+  {% for project in projects %}
+  <a class="project-card" href="{{ project.url | relative_url }}">
+    <img src="{{ project.image | relative_url }}" loading="lazy" alt="{{ project.card_alt }}">
+    <div class="project-card-text">
+      <div>
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.tagline }}</p>
+      </div>
+      <span class="arrow-circle" aria-hidden="true">→</span>
+    </div>
+  </a>
+  {% endfor %}
+</div>

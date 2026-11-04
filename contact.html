@@ -1,0 +1,30 @@
+---
+layout: page
+title: Contact
+description: Contactez Avenir Ajoie pour poser une question, adhérer ou soutenir l’association.
+eyebrow: Échangeons
+heading: CONTACT.
+lead: Une question, une idée, une envie de participer ? Écrivez-nous.
+---
+<section class="content-section">
+  <div class="wrap">
+    <div class="contact-list">
+      <div class="contact-box">
+        <h2>Écrivez-nous</h2>
+        <p>Association {{ site.title }}</p>
+        <p class="contact-mail"><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      </div>
+      <div id="adhesion" class="contact-box">
+        <h2>Nous rejoindre</h2>
+        <p>L'association fonctionne grâce à l'engagement et au soutien des habitants et amis de l'Ajoie. Vous souhaitez devenir membre ou proposer votre aide ?</p>
+        <a class="button-primary" href="mailto:{{ site.email }}?subject=Adh%C3%A9sion%20%C3%A0%20Avenir%20Ajoie">Demander à adhérer <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div id="reseaux" class="link-card">
+      <h3>Retrouvez-nous sur les réseaux</h3>
+      <p>Facebook et Instagram permettent de suivre les nouvelles, les photos et les événements de l'association.</p>
+      {% assign social_urls = site.data.social | map: 'url' | join: '' %}
+      {% include social-links.html on_light=true %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+# Paste the exact account URLs (https://...). While a URL is empty,
+# its icon links to the "réseaux" section of the contact page.
+- name: Facebook
+  icon: facebook.svg
+  url: https://www.facebook.com/avenirajoie
+- name: Instagram
+  icon: instagram.svg
+  url: https://www.instagram.com/avenirajoie/

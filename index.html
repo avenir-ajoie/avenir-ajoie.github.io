@@ -1,0 +1,45 @@
+---
+layout: default
+title: Accueil
+---
+<section class="hero" aria-labelledby="home-title">
+  <div class="hero-inner">
+    <h1 id="home-title">NOTRE<br>AJOIE.<br>NOTRE<br>AVENIR.</h1>
+    <span class="accent-line"></span>
+    <p>Une association citoyenne pour préserver le paysage, la biodiversité et le cadre de vie de notre région.</p>
+  </div>
+</section>
+<section id="projets" class="home-projects" aria-label="Découvrir nos trois projets">
+  <div class="wrap">
+    {% include project-grid.html %}
+  </div>
+</section>
+<section class="intro-section" id="presentation">
+  <div class="wrap">
+    <div class="intro-heading">
+      <div class="eyebrow">L'association en quelques mots</div>
+      <h2 class="section-title">NOTRE ENGAGEMENT.</h2>
+      <p>Trois informations pour comprendre qui nous sommes et comment participer.</p>
+    </div>
+    <div class="info-grid">
+      <article class="info-card">
+        <h3>Qui sommes-nous ?</h3>
+        <p>Avenir Ajoie est une association citoyenne et bénévole fondée à Asuel, dans la commune de La Baroche, pour défendre le patrimoine naturel et la qualité de vie de notre région.</p>
+        <a class="mini-link" href="{{ '/association/' | relative_url }}">En savoir plus →</a>
+      </article>
+      <article class="info-card">
+        <h3>Nos buts et engagements</h3>
+        <ul>
+          <li><strong>Protéger et valoriser</strong> les paysages, les forêts et la biodiversité.</li>
+          <li><strong>Sensibiliser et informer</strong> les habitants et les autorités sur les enjeux locaux.</li>
+        </ul>
+        <a class="mini-link" href="{{ '/association/#engagements' | relative_url }}">Nos engagements →</a>
+      </article>
+      <article class="info-card">
+        <h3>Nous rejoindre et nous soutenir</h3>
+        <p>Notre association vit grâce à la participation et au soutien de celles et ceux qui aiment l'Ajoie et veulent prendre part à son avenir.</p>
+        <a class="mini-link" href="{{ '/contact/#adhesion' | relative_url }}">Nous rejoindre →</a>
+      </article>
+    </div>
+  </div>
+</section>
