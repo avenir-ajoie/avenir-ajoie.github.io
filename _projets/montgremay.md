@@ -1,5 +1,5 @@
 ---
-title: Montgremay
+title: "Non à la carrière à ciel ouvert"
 order: 1
 tagline: Pour un territoire préservé
 description: "Montgremay et les projets de carrière : informations et engagement d’Avenir Ajoie."
