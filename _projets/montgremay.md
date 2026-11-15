@@ -18,5 +18,3 @@ Face au projet potentiel d'extraction d'argiles à Opalinus entre La Malcôte et
 Le secteur concerne un paysage rural composé de prairies, de terres agricoles et de boisements. Les effets possibles sur le paysage, la biodiversité, les déplacements et le cadre de vie doivent être examinés avec attention.
 
 <iframe src="https://www.youtube.com/embed/s_E0T03vMhA?si=vZZYLVyD6VIlqmtv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 100%; aspect-ratio: 16/9; height: auto; margin: 28px 0; border-radius: 16px; display: block;"></iframe>
-
-Vous trouverez un résumé dans <a class="mini-link" target="_blank" rel="noopener noreferrer" href="{{ '/carrieres-de-la-baroche.pdf' | relative_url }}">ce document PDF →</a>.

@@ -10,7 +10,7 @@ Site de l'association, généré par [Jekyll](https://jekyllrb.com) et publié p
 | Ajouter un projet | Copier un fichier de `_projets/` ; `order` fixe sa place dans les listes |
 | Les autres pages | `index.html`, `association.html`, `projets.html`, `contact.html` |
 | Les menus | `_data/navigation.yml` |
-| Facebook et Instagram | `_data/social.yml` |
+| Facebook, Instagram et YouTube | `_data/social.yml` |
 | L'e-mail et autres détails | `_config.yml` |
 | Les couleurs et la mise en page | `assets/css/style.css` |
 | Les photos | `assets/images/` |
