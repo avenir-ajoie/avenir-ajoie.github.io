@@ -17,7 +17,31 @@ lead: Une question, une idée, une envie de participer ? Écrivez-nous.
       <div id="adhesion" class="contact-box">
         <h2>Nous rejoindre</h2>
         <p>L'association fonctionne grâce à l'engagement et au soutien des habitants et amis de l'Ajoie. Vous souhaitez devenir membre ou proposer votre aide ?</p>
-        <a class="button-primary" href="mailto:{{ site.email }}?subject=Adh%C3%A9sion%20%C3%A0%20Avenir%20Ajoie">Demander à adhérer <span aria-hidden="true">→</span></a>
+        <div class="adhesion-actions" id="adhesion-actions">
+          <button type="button" class="button-primary" id="btn-open-adhesion" aria-expanded="false" aria-controls="adhesion-form">Demander à adhérer <span aria-hidden="true">→</span></button>
+        </div>
+        <form id="adhesion-form" class="adhesion-form" data-recipient="{{ site.email }}" style="display: none;" novalidate>
+          <div class="form-group">
+            <label for="adhesion-name">Nom <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="adhesion-name" name="name" required placeholder="Votre nom" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="adhesion-email">Adresse e-mail <span class="required" aria-hidden="true">*</span></label>
+            <input type="email" id="adhesion-email" name="email" required placeholder="nom@exemple.ch" autocomplete="email">
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="button-primary">Envoyer la demande <span aria-hidden="true">→</span></button>
+            <button type="button" class="btn-cancel" id="btn-cancel-adhesion">Annuler</button>
+          </div>
+        </form>
+        <script>
+          if (window.location.hash === '#adhesion' || window.location.hash === '#adhesion-form') {
+            var _f = document.getElementById('adhesion-form');
+            var _a = document.getElementById('adhesion-actions');
+            if (_f) _f.style.display = 'block';
+            if (_a) _a.style.display = 'none';
+          }
+        </script>
       </div>
     </div>
     <div id="reseaux" class="link-card">
@@ -28,3 +52,14 @@ lead: Une question, une idée, une envie de participer ? Écrivez-nous.
     </div>
   </div>
 </section>
+
+<dialog id="adhesion-dialog" class="modal-dialog" aria-labelledby="modal-title">
+  <div class="modal-content">
+    <h3 id="modal-title">Merci pour votre intérêt !</h3>
+    <p>Votre application de messagerie va s'ouvrir pour envoyer votre demande d'adhésion à <strong>{{ site.email }}</strong>.</p>
+    <p class="modal-fallback-text">Si votre messagerie ne s'ouvre pas automatiquement, <a id="adhesion-mailto-fallback" href="#">cliquez ici pour ouvrir votre message</a>.</p>
+    <div class="modal-actions">
+      <button type="button" class="button-primary" id="modal-dismiss-btn">Fermer</button>
+    </div>
+  </div>
+</dialog>
