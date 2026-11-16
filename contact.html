@@ -29,6 +29,14 @@ lead: Une question, une idée, une envie de participer ? Écrivez-nous.
             <label for="adhesion-email">Adresse e-mail <span class="required" aria-hidden="true">*</span></label>
             <input type="email" id="adhesion-email" name="email" required placeholder="nom@exemple.ch" autocomplete="email">
           </div>
+          <div class="form-group">
+            <label for="adhesion-phone">Numéro de téléphone <span class="required" id="adhesion-phone-required" style="display: none;" aria-hidden="true">*</span></label>
+            <input type="tel" id="adhesion-phone" name="phone" placeholder="+41 79 123 45 67" autocomplete="tel">
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="adhesion-whatsapp" name="whatsapp">
+            <label for="adhesion-whatsapp">M'ajouter au groupe WhatsApp Avenir Ajoie</label>
+          </div>
           <div class="form-actions">
             <button type="submit" class="button-primary">Envoyer la demande <span aria-hidden="true">→</span></button>
             <button type="button" class="btn-cancel" id="btn-cancel-adhesion">Annuler</button>

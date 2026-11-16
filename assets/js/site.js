@@ -31,8 +31,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnDismiss = document.getElementById('modal-dismiss-btn');
   const nameInput = document.getElementById('adhesion-name');
   const emailInput = document.getElementById('adhesion-email');
+  const phoneInput = document.getElementById('adhesion-phone');
+  const phoneRequiredIndicator = document.getElementById('adhesion-phone-required');
+  const whatsappCheckbox = document.getElementById('adhesion-whatsapp');
 
   if (btnOpen && adhesionForm) {
+    const updatePhoneRequirement = () => {
+      const isRequired = Boolean(whatsappCheckbox && whatsappCheckbox.checked);
+      if (phoneInput) {
+        phoneInput.required = isRequired;
+        if (isRequired) {
+          phoneInput.setAttribute('aria-required', 'true');
+        } else {
+          phoneInput.removeAttribute('aria-required');
+          phoneInput.setCustomValidity('');
+        }
+      }
+      if (phoneRequiredIndicator) {
+        phoneRequiredIndicator.style.display = isRequired ? 'inline' : 'none';
+      }
+    };
+
     const showForm = (shouldFocus = true) => {
       adhesionForm.style.display = 'block';
       if (adhesionActions) adhesionActions.style.display = 'none';
@@ -44,10 +63,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const hideForm = () => {
       adhesionForm.reset();
+      updatePhoneRequirement();
       adhesionForm.style.display = 'none';
       if (adhesionActions) adhesionActions.style.display = '';
       btnOpen.setAttribute('aria-expanded', 'false');
     };
+
+    if (whatsappCheckbox) {
+      whatsappCheckbox.addEventListener('change', () => {
+        updatePhoneRequirement();
+        if (whatsappCheckbox.checked && phoneInput && !phoneInput.value.trim()) {
+          phoneInput.focus();
+        }
+      });
+    }
+
+    if (phoneInput) {
+      phoneInput.addEventListener('input', () => {
+        if (phoneInput.value.trim()) {
+          phoneInput.setCustomValidity('');
+        }
+      });
+    }
+
+    adhesionForm.addEventListener('reset', () => {
+      setTimeout(updatePhoneRequirement, 0);
+    });
 
     const checkHashAndOpen = (shouldFocus = false) => {
       if (window.location.hash === '#adhesion' || window.location.hash === '#adhesion-form') {
@@ -92,6 +133,12 @@ document.addEventListener('DOMContentLoaded', () => {
     adhesionForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
+      if (whatsappCheckbox && whatsappCheckbox.checked && phoneInput && !phoneInput.value.trim()) {
+        phoneInput.setCustomValidity('Veuillez renseigner votre numéro de téléphone.');
+      } else if (phoneInput) {
+        phoneInput.setCustomValidity('');
+      }
+
       if (!adhesionForm.checkValidity()) {
         adhesionForm.reportValidity();
         return;
@@ -99,6 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const name = (nameInput ? nameInput.value : '').trim();
       const email = (emailInput ? emailInput.value : '').trim();
+      const phone = (phoneInput ? phoneInput.value : '').trim();
+      const whatsapp = Boolean(whatsappCheckbox && whatsappCheckbox.checked);
       const recipient = adhesionForm.dataset.recipient || 'info@avenir-ajoie.ch';
 
       const subject = `Demande d'adhésion à Avenir Ajoie - ${name}`;
@@ -108,6 +157,8 @@ Je souhaite adhérer à l'association Avenir Ajoie.
 
 Nom : ${name}
 Adresse e-mail : ${email}
+Numéro de téléphone : ${phone || 'Non renseigné'}
+Groupe WhatsApp : ${whatsapp ? 'Oui' : 'Non'}
 
 Message :
 Je vous prie de bien vouloir prendre en compte ma demande d'adhésion.
@@ -160,5 +211,7 @@ ${name}`;
         hideForm();
       });
     }
+
+    updatePhoneRequirement();
   }
 });
