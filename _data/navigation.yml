@@ -6,6 +6,8 @@ main:
     url: /projets/
   - title: Association
     url: /association/
+  - title: Actualités
+    url: /actualites/
   - title: Contact
     url: /contact/
 
