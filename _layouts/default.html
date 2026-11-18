@@ -8,6 +8,7 @@
   <title>{{ page.title }} — {{ site.title }}</title>
   <link rel="icon" href="{{ '/assets/images/logo-avenir-ajoie.png' | relative_url }}" type="image/png">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% if page.head_style %}<style>{{ page.head_style }}</style>{% endif %}
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
